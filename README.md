@@ -1,10 +1,10 @@
 # Mathematical Tools for Neuroscience (Neurobio 212 at Harvard)
 
-*Developed and taught by Ella Batty, Lucy Lai, Alex Chen, and John Assad*
+*Initially developed and taught by Ella Batty, Lucy Lai, Alex Chen, and John Assad, updated by Kanaka Rajan, Jan Drugowitsch, Gabriel Kreiman, and Caleb Weinreb.*
 
-Course contact: Eleanor_Batty@hms.harvard.edu
+Course contacts: kanaka_rajan@hms.harvard.edu, jan_drugowitsch@hms.harvard.edu, gabriel.kreiman@tch.harvard.edu, calebsw@gmail.com
 
-**Scroll down to bottom for the materials**
+**Scroll down for the materials**
 
 ### Description of course
 
@@ -94,3 +94,22 @@ Video links below will take you to Youtube, tutorial links will open Google cola
 | | [Comprehension Questions](https://forms.gle/mcijrJG3iX9kitgi8) | |
 | |  [Tutorial 1](https://colab.research.google.com/github/ebatty/MathToolsforNeuroscience/blob/master/Week8/Week8Tutorial1.ipynb)                   | Compute STA of retinal data, implement gradient descent by hand to compute LNP parameters |
 | |  [Tutorial 2](https://colab.research.google.com/github/ebatty/MathToolsforNeuroscience/blob/master/Week8/Week8Tutorial2.ipynb)                   | Play with LNP filters and see resulting dynamics|
+
+### Building the course webpage locally
+
+To create a local copy of the course webpage (e.g., to change its content), clone the repository and build the jupyterbook locally. The latter is achieved by first installing the required packages into a virtual environment (here assuming the use of the uv package manager):
+```Shell
+uv venv --python 3.13
+uv pip install -r requirements.txt
+```
+Once installed, the jupyterbook is built by calling
+```
+uv run jupyter-book biild .
+```
+Once completed, the course webpage will be available at `_build/html/index.html`.
+
+Note that this will _not_ produce an exact copy of the course webpage, as it does not pre-process the jupyter notebooks. This is done to avoid modifying each of these files, which makes version control tricky. In order to perform this pre-processing if desired, additionally run
+```
+uv run ci/process_files.py
+```
+before builing the jupyterbook. This pre-processing script puts videos/slides into ipywidgets so they don't overlap, and links hidden cells.
