@@ -4,7 +4,7 @@
 
 Course contacts: kanaka_rajan@hms.harvard.edu, jan_drugowitsch@hms.harvard.edu, gabriel.kreiman@tch.harvard.edu, calebsw@gmail.com
 
-The course material is available as a [jupyterbook](https://rajanlab.github.io/MathTools2026/) hosted as a Github page. The source files used to build this jupyterbook are available in this repository. Please see below for instructions on how to build the course webpage locally.
+The course material is available as a [jupyterbook](https://rajanlab.github.io/MathTools2026/) hosted as a Github page. The source files used to build this jupyterbook are available in this repository. Please see [these instructions](CONTRIBUTING.md) for how to best edit/contribute to the course material.
 
 ### Description of course
 
@@ -34,22 +34,3 @@ Helpful for before this course: [Basic Introduction to Maths and Python for Neur
 Similar course: [Mathematical Tools for Neural and Cognitive Science by Eero Simoncelli & Mike Landy](https://www.cns.nyu.edu/~eero/math-tools/)
 
 A good follow-up to learn computational neuroscience: [Neuromatch Academy](https://github.com/NeuromatchAcademy/course-content)
-
-### Building the course webpage locally
-
-To create a local copy of the course webpage (e.g., to change its content), clone the repository and build the jupyterbook locally. The latter is achieved by first installing the required packages into a virtual environment (here assuming the use of the uv package manager):
-```Shell
-uv venv --python 3.13
-uv pip install -r requirements.txt
-```
-Once installed, the jupyterbook is built by calling
-```
-uv run jupyter-book biild .
-```
-Once completed, the course webpage will be available at `_build/html/index.html`.
-
-Note that this will _not_ produce an exact copy of the course webpage, as it does not pre-process the jupyter notebooks. This is done to avoid modifying each of these files, which makes version control tricky. In order to perform this pre-processing if desired, additionally run
-```
-uv run ci/process_files.py
-```
-before builing the jupyterbook. This pre-processing script puts videos/slides into ipywidgets so they don't overlap, and links hidden cells.
