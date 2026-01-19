@@ -4,7 +4,7 @@
 
 Course contacts: kanaka\_rajan@hms.harvard.edu, jan\_drugowitsch@hms.harvard.edu, gabriel.kreiman@tch.harvard.edu, calebsw@gmail.com
 
-TFs (Spring 2026): Kathleen Esfahany (kesfahany@g.harvard.edu), Alireza Dehaquani (alireza@g.harvard.edu)
+TFs (Spring 2026): Kathleen Esfahany (kesfahany@g.harvard.edu), Alireza Dehaqani (alireza@g.harvard.edu)
 
 The course material is available as a [jupyterbook](https://rajanlab.github.io/MathTools2026/) hosted as a Github page. The source files used to build this jupyterbook are available in this repository. Please see [these instructions](CONTRIBUTING.md) for how to best edit/contribute to the course material.
 
